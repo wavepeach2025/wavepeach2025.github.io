@@ -1,4 +1,3 @@
-<!-- 测试部署 2024 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +6,7 @@
         body {
             background-color: white;
             display: flex;
+            flex-direction: column;  /* 改为纵向排列 */
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -23,20 +23,26 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-bottom: 20px;  /* 添加底部间距 */
         }
 
         .round-button:hover {
             background-color: #333;
         }
+
+        .flower-image {
+            width: 200px;  /* 设置图片宽度 */
+            height: auto;  /* 保持图片比例 */
+        }
     </style>
 </head>
 <body>
     <button class="round-button" onclick="showMessage()">click</button>
+    <img src="https://img.freepik.com/free-photo/beautiful-pink-rose-isolated-white_167946-101.jpg" alt="月季花" class="flower-image">
 
     <script>
         function showMessage() {
-            alert("welcome to my first project!
-                  月季公主你好：这个是我用 AI写的第一网页");
+            alert("月季公主:你好，这是桃子用 AI写的一个网页。\nWelcome to my world");
         }
     </script>
 </body>
