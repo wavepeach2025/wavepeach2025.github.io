@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>圆形按钮示例</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .round-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .round-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button class="round-button" onclick="showMessage()">click</button>
+
+    <script>
+        function showMessage() {
+            alert("hello world");
+        }
+    </script>
+</body>
+</html> 
