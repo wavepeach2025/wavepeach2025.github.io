@@ -4,25 +4,25 @@
     <title>圆形按钮示例</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* ... 之前的样式保持不变 ... */
+        /* ... 其他样式保持不变 ... */
 
-        .custom-alert {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: none;
-            width: 80%;
-            max-width: 400px;
-            position: relative;  /* 添加这行 */
+        .round-button {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #FFD700;  /* 改为金色 */
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 30px;
         }
 
-        /* 添加新的关闭按钮样式 */
+        .round-button:hover {
+            background-color: #DAA520;  /* 悬停时变为深金色 */
+        }
+
         .close-x {
             position: absolute;
             right: 10px;
@@ -30,7 +30,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: black;
+            background: #FFD700;  /* 改为金色 */
             color: white;
             display: flex;
             justify-content: center;
@@ -41,36 +41,11 @@
         }
 
         .close-x:hover {
-            background: #333;
-        }
-
-        .message-content {
-            margin-top: 20px;  /* 为X按钮留出空间 */
+            background: #DAA520;  /* 悬停时变为深金色 */
         }
     </style>
 </head>
 <body>
-    <button class="round-button" onclick="showMessage()">click</button>
-    <img src="IMG_5656.jpg" alt="月季花" class="flower-image">
-
-    <div id="customAlert" class="custom-alert">
-        <button class="close-x" onclick="closeAlert()">×</button>
-        <div class="message-content">
-            <p class="message-text">
-                <span class="bold-text">月季公主:你好，这是桃子用 AI写的一个网页。</span><br>
-                Welcome to my world
-            </p>
-        </div>
-    </div>
-
-    <script>
-        function showMessage() {
-            document.getElementById('customAlert').style.display = 'block';
-        }
-
-        function closeAlert() {
-            document.getElementById('customAlert').style.display = 'none';
-        }
-    </script>
+    <!-- 其他 HTML 内容保持不变 -->
 </body>
 </html>
