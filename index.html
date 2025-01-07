@@ -4,13 +4,21 @@
     <title>圆形按钮示例</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* ... 其他样式保持不变 ... */
+        body {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
         .round-button {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: #FFD700;  /* 改为金色 */
+            background-color: #FFD700;
             border: none;
             color: white;
             font-size: 24px;
@@ -20,7 +28,29 @@
         }
 
         .round-button:hover {
-            background-color: #DAA520;  /* 悬停时变为深金色 */
+            background-color: #DAA520;
+        }
+
+        .flower-image {
+            width: 300px;
+            height: auto;
+            max-width: 90vw;
+        }
+
+        .custom-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: none;
+            width: 80%;
+            max-width: 400px;
+            position: relative;
         }
 
         .close-x {
@@ -30,7 +60,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: #FFD700;  /* 改为金色 */
+            background: #FFD700;
             color: white;
             display: flex;
             justify-content: center;
@@ -41,11 +71,45 @@
         }
 
         .close-x:hover {
-            background: #DAA520;  /* 悬停时变为深金色 */
+            background: #DAA520;
+        }
+
+        .message-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .message-content {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- 其他 HTML 内容保持不变 -->
+    <button class="round-button" onclick="showMessage()">click</button>
+    <img src="IMG_5656.jpg" alt="月季花" class="flower-image">
+
+    <div id="customAlert" class="custom-alert">
+        <button class="close-x" onclick="closeAlert()">×</button>
+        <div class="message-content">
+            <p class="message-text">
+                <span class="bold-text">月季公主:你好，这是桃子用 AI写的一个网页。</span><br>
+                Welcome to my world
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('customAlert').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
