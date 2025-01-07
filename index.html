@@ -6,7 +6,7 @@
         body {
             background-color: white;
             display: flex;
-            flex-direction: column;  /* 改为纵向排列 */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -23,7 +23,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-bottom: 20px;  /* 添加底部间距 */
+            margin-bottom: 20px;
         }
 
         .round-button:hover {
@@ -31,18 +31,53 @@
         }
 
         .flower-image {
-            width: 200px;  /* 设置图片宽度 */
-            height: auto;  /* 保持图片比例 */
+            width: 200px;
+            height: auto;
+        }
+
+        /* 添加自定义弹窗样式 */
+        .custom-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: none;
+        }
+
+        .message-text {
+            font-size: 18px;  /* 放大字号 */
+        }
+
+        .bold-text {
+            font-weight: bold;  /* 加粗文字 */
         }
     </style>
 </head>
 <body>
     <button class="round-button" onclick="showMessage()">click</button>
-    <img src="https://img.freepik.com/free-photo/beautiful-pink-rose-isolated-white_167946-101.jpg" alt="月季花" class="flower-image">
+    <img src="https://drive.google.com/file/d/1DOIEp9YYUgOSPViq5JPDKIHM0mQNBItx/view" alt="月季花" class="flower-image">
+
+    <!-- 自定义弹窗 -->
+    <div id="customAlert" class="custom-alert">
+        <p class="message-text">
+            <span class="bold-text">月季公主:你好，这是桃子用 AI写的一个网页。</span><br>
+            Welcome to my world
+        </p>
+        <button onclick="closeAlert()">关闭</button>
+    </div>
 
     <script>
         function showMessage() {
-            alert("月季公主:你好，这是桃子用 AI写的一个网页。\nWelcome to my world");
+            document.getElementById('customAlert').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('customAlert').style.display = 'none';
         }
     </script>
 </body>
