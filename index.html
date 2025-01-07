@@ -2,31 +2,17 @@
 <html>
 <head>
     <title>圆形按钮示例</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             background-color: white;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
             padding: 20px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 600px;
         }
 
         .round-button {
@@ -40,7 +26,6 @@
             cursor: pointer;
             transition: background-color 0.3s;
             margin-bottom: 30px;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .round-button:hover {
@@ -51,7 +36,6 @@
             width: 300px;
             height: auto;
             max-width: 90%;
-            display: block;
         }
 
         .custom-alert {
@@ -84,7 +68,6 @@
             cursor: pointer;
             font-size: 20px;
             border: none;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .close-x:hover {
@@ -94,7 +77,6 @@
         .message-text {
             font-size: 24px;
             margin-bottom: 20px;
-            word-break: break-word;
         }
 
         .bold-text {
@@ -104,29 +86,11 @@
         .message-content {
             margin-top: 20px;
         }
-
-        @media (max-width: 480px) {
-            .round-button {
-                width: 120px;
-                height: 120px;
-                font-size: 20px;
-            }
-
-            .flower-image {
-                width: 250px;
-            }
-
-            .message-text {
-                font-size: 20px;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <button class="round-button" onclick="showMessage()">click</button>
-        <img src="IMG_5656.jpg" alt="月季花" class="flower-image">
-    </div>
+    <button class="round-button" onclick="showMessage()">click</button>
+    <img src="IMG_5656.jpg" alt="月季花" class="flower-image">
 
     <div id="customAlert" class="custom-alert">
         <button class="close-x" onclick="closeAlert()">×</button>
@@ -146,18 +110,6 @@
         function closeAlert() {
             document.getElementById('customAlert').style.display = 'none';
         }
-
-        // 防止iOS设备上的双击缩放
-        document.addEventListener('touchstart', function(event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
-            }
-        }, { passive: false });
-
-        // 防止双指缩放
-        document.addEventListener('gesturestart', function(event) {
-            event.preventDefault();
-        });
     </script>
 </body>
 </html>
